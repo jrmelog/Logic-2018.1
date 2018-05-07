@@ -14,7 +14,7 @@ theorem prova1:
       from p have pr: "(P\<or>R)" by (rule disjI1)
       from pq and pr show "(P\<or>Q) \<and> (P\<or>R)" by (rule conjI)
     qed
- 
+    
     have qr_pq_and_pr: "(Q\<and>R) \<Longrightarrow>(P\<or>Q) \<and> (P\<or>R)"
     proof -
       assume qr:"(Q\<and>R)"
@@ -24,6 +24,17 @@ theorem prova1:
       from r have pr: "(P\<or>R)" by (rule disjI2)
       from pq and pr show "(P\<or>Q) \<and> (P\<or>R)" by (rule conjI)
     qed
-  from pq and p_pq_and_pr and qr_pq_and_pr show "(P\<or>Q) \<and> (P\<or>R)" by (rule disjE)
+  from pq and p_pq_and_pr and qr_pq_and_pr show "(P\<or>Q)\<and>(P\<or>R)" by (rule disjE)
+qed
+end
+
+begin
+theorem prova2:
+  assumes pq: "P\<or>Q"
+  shows "~(~P\<and>~Q)"
+
+proof-
+
+
 qed
 end
