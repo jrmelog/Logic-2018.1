@@ -1,0 +1,14 @@
+theory prova2
+ imports Main
+
+begin
+theorem prova2:
+  assumes pq: "P \<or> Q"
+  shows "\<not>(\<not>P \<and> \<not>Q)"
+
+  have npnq: "\<not>P \<and> \<not>Q"
+  proof -
+  qed
+
+qed
+end
